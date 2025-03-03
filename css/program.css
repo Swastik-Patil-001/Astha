@@ -1,0 +1,292 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    overflow: hidden;
+    height: 100%;
+    background: linear-gradient(rgb(245 69 69 / 77%), rgb(255 39 205 / 84%)), url(../images/background.jpg);
+}
+
+body {
+    width: 100vw;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+}
+
+.title {
+    font-size: 35px; /* Bada aur attractive font */
+    font-weight: bold; /* Bold text */
+    color: white; /* White text color */
+    text-align: center; /* Center me align */
+    background: linear-gradient(45deg, #ff4e50, #fc913a); /* Gradient background */
+    padding: 15px 30px; /* Andar ka space */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    display: inline-block; /* Background text ke according */
+    text-transform: uppercase; /* Sare letters capital */
+    letter-spacing: 2px; /* Space between letters */
+    animation: glow 1.5s infinite alternate; /* Glow effect */
+}
+
+/* Glow Animation */
+@keyframes glow {
+    from { text-shadow: 0 0 10px #ff9a9e, 0 0 20px #fad0c4; }
+    to { text-shadow: 0 0 20px #ff758c, 0 0 30px #ff7eb3; }
+}
+
+.birthday-wish {
+    font-size: 20px; /* Text ka size bada karne ke liye */
+    font-weight: bold; /* Bold text ke liye */
+    color: white; /* Text color white */
+    text-align: center; /* Center me align karne ke liye */
+    background: linear-gradient(45deg, #ff4e50, #fc913a); /* Gradient background */
+    padding: 15px; /* Andar ka space */
+    border-radius: 10px; /* Corners round karne ke liye */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    display: inline-block; /* Sirf text area ke according background */
+    margin-top: 20px;
+}
+
+.cube{
+    position: relative;
+    margin: 0px auto;
+    margin-top: 15%;
+    /* margin-left: 42%; */
+    width: 200px;
+    height: 200px;
+    transform: rotateX(-30deg) rotateY(-80deg);
+    transform-style: preserve-3d;
+    animation: rotate 15s infinite;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 250px;
+}
+
+.cube .outer-cube,
+.cube .inner-cube {
+    transform-style: preserve-3d;
+}
+
+
+@keyframes rotate {
+    from {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+
+    to {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+
+
+
+.outer-cube .outer-top,
+.outer-cube .outer-bottom,
+.outer-cube .outer-right,
+.outer-cube .outer-left,
+.outer-cube .outer-front,
+.outer-cube .outer-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 180px;
+    height: 200px;
+    border: 1px solid #fff;
+    opacity: 0.3;
+    transition: all .9s;
+    background-size: cover;  /* Ensures the image covers the full area */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat;
+}
+
+.outer-cube img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover; /* Ensures the image fills the container without stretching */
+    
+}
+
+
+.outer-top {
+    transform: rotateX(90deg) translateZ(100px);
+}
+
+.outer-bottom {
+    transform: rotateX(-90deg) translateZ(100px);
+}
+
+.outer-front {
+    transform: rotateY(0deg) translateZ(100px);
+}
+
+.outer-back {
+    transform: translateZ(-100px) rotateY(180deg);
+}
+
+.outer-left {
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+.outer-right {
+    transform: rotateY(-90deg) translateZ(100px);
+}
+
+
+.inner-cube>div {
+    position: absolute;
+    top: 35px;
+    left: 35px;
+    width: 130px;
+    height: 130px;
+}
+
+.inner-cube img {
+    width: 130px;
+    height: 130px;
+}
+
+.inner-top {
+    transform: rotateX(90deg) translateZ(65px);
+}
+
+.inner-bottom {
+    transform: rotateX(-90deg) translateZ(65px);
+}
+
+.inner-front {
+    transform: rotateY(0deg) translateZ(65px);
+}
+
+.inner-back {
+    transform: translateZ(-65px) rotateY(180deg);
+}
+
+.inner-left {
+    transform: rotateY(90deg) translateZ(65px);
+}
+
+.inner-right {
+    transform: rotateY(-90deg) translateZ(65px);
+}
+
+.cube:hover .outer-top {
+    right: -70px;
+    bottom: -70px;
+    opacity: 0.8;
+    transform: rotateX(90deg) translateZ(200px);
+}
+
+.cube:hover .outer-bottom {
+    right: -70px;
+    bottom: -70px;
+    opacity: 0.8;
+    transform: rotateX(-90deg) translateZ(200px);
+}
+
+.cube:hover .outer-front {
+    right: -70px;
+    bottom: -70px;
+    opacity: 0.8;
+    transform: rotateY(0deg) translateZ(200px);
+}
+
+.cube:hover .outer-back {
+    right: -70px;
+    bottom: -70px;
+    opacity: 0.8;
+    transform: translateZ(-200px) rotateY(180deg);
+}
+
+#copy {
+    position: fixed;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+}
+
+#copy {
+    position: fixed; /* Page ke bottom pe fix */
+    bottom: 10px; /* Bottom se thoda upar */
+    left: 50%; /* Center me shift */
+    transform: translateX(-50%); /* Exact center */
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+    padding: 10px 20px; /* Space andar */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Light shadow */
+    text-align: center;
+}
+
+#copy p {
+    font-size: 14px; /* Text size */
+    color: white; /* White text */
+    font-weight: bold;
+}
+
+#copy a {
+    color: #ff4e50; /* Attractive red color */
+    text-decoration: none; /* No underline */
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+#copy a:hover {
+    color: #ff758c; /* Light red on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+.cube:hover .outer-left {
+    right: -70px;
+    bottom: -70px;
+    opacity: 0.8;
+    transform: rotateY(90deg) translateZ(200px);
+}
+
+.cube:hover .outer-right {
+    right: -70px;
+    bottom: -70px;
+    opacity: 0.8;
+    transform: rotateY(-90deg) translateZ(200px);
+}
+
+.message .author {
+    position: absolute;
+    right: 50px;
+    background-image: -webkit-linear-gradient(left, blue, #66ffff 10%, #cc00ff 20%, #CC00CC 30%, #CCCCFF 40%, #00FFFF 50%, #CCCCFF 60%, #CC00CC 70%, #CC00FF 80%, #66FFFF 90%, blue 100%);
+    font-size: 35px;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-background-size: 200% 100%;
+    -webkit-animation: masked-animation 4s linear infinite;
+}
+
+@keyframes masked-animation {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -100% 0;
+    }
+}
+
+.message .tip {
+    position: absolute;
+    /* right: 10px; */
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30px;
+    margin-top: 60px;
+    color: white;
+    font-size: 18px;
+}
